@@ -90,6 +90,8 @@ To chnage with new URL for the remote. For example:
 * and configure the url and already selected branch master and specify userid and
 * password and select next to push. 
 * 
+* PUSHING THIS NEW INTERGATED REPOSITORY TO EXISTING, WILL FAIL.
+* 
 * Use git push to push commits made on your local branch to a remote repository.
 *  The git push command takes two arguments: A remote name, for example, origin. A branch name, for example, master.
 -->git push origin master

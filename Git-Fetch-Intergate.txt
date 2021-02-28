@@ -40,17 +40,24 @@ Merge the service-local local branch to master branch
  
  
  For Dynamic web application project created in Eclipse(Intergation Project)
- Run the following commands in project dir
+ Run the following commands in project dir TO CREATE,INIT,FETCCH AND MERGE AND 	finally test all siatuiations.
  git init
  git remote add remote-repos http://admin@localhost:1100/gitblit/r/LoginApp-Repos.git
  git fetch remote-repos refs/heads/html-code:refs/heads/html-ui
  git fetch remote-repos refs/heads/service-code:refs/heads/service-local
  git checkout html-ui  : To switch the current active branch  
  git branch -av
- git branch master
+ git branch master 
  git checkout master
  git merge html-ui
  git merge service-local
  git merge service-local --allow-unrelated-histories
  git branch -av
  git branch -d html-ui
+ 
+ After testing from build,test,analyse,deploy,acceptance test ,use  git add . to add staging and commit all files.
+ Now push this local current repository master branch to remote repository.
+ -->git remote add webCode http://admin@localhost:1100/gitblit/r/LoginApp-Repos.git
+ Push the master branch to remote repository master branch.
+ -->git push webCode master
+ 

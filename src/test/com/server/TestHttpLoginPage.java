@@ -17,7 +17,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Node;
 import com.gargoylesoftware.htmlunit.javascript.host.html.HTMLAnchorElement;
-
+import com.gargoylesoftware.htmlunit.BrowserVersion;
  
 
 import static org.junit.Assert.*;
@@ -67,18 +67,38 @@ public class TestHttpLoginPage {
 	@Before
 	public void setup()
 	{
-		htmlPage = new File("WebContent/userLogin.html");	 	 
-	 	webClient = new WebClient();		
+/*java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
+    java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
+*/
+
+		htmlPage = new File("WebContent/userLogin.html");	 
+	 
+	//webClient = new WebClient();//Default browser
+
+    // webClient= new WebClient(BrowserVersion.CHROME);  
+   //webClient = new WebClient(BrowserVersion.FIREFOX_52);
+
+
+   webClient = new WebClient(BrowserVersion.INTERNET_EXPLORER);
+
+
+ //System.out.println("The web client is "+webClient);
+
+
+  //webClient.getOptions().setJavaScriptEnabled(true);
+  //webClient.getOptions().setCssEnabled(true);		
 		 
 	    try {
 		 page = webClient.getPage("file:///"+htmlPage.getAbsolutePath());
 		} catch (FailingHttpStatusCodeException e) {			 
-			e.printStackTrace();
+			System.out.println("The error in loading is "+e.getMessage());
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+			System.out.println("The error in loading is "+e.getMessage());
+
+		} catch (Exception e) {
 			 
-			e.printStackTrace();
+			System.out.println("The error in loading is "+e.getMessage());
+
 		}
 	   
 	}
