@@ -1,4 +1,4 @@
-Create a new local git repository to receive files from remote repoisitory
+Create a new local git repository to receive files from remote repoisitory (Testing)
 ->git init
 Create a remote repos and add remote repository URL
 -->git remote add remote-repos http://admin@localhost:1100/gitblit/r/LoginApp-Repos.git
