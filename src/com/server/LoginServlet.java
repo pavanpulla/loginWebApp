@@ -64,11 +64,11 @@ public class LoginServlet extends HttpServlet {
 			 out.write("Login  allowed here...");
 				  */
 		if(service.validateUser(name, pwd))
-<<<<<<< HEAD
+ 
 			out.write("Login successfull DONE...");
-=======
+ 
 			out.write("Login successfull...done");
->>>>>>> LoginServlet updated messages
+ 
 		else
 			out.write("Login Error...appeared");
 
