@@ -65,9 +65,8 @@ public class LoginServlet extends HttpServlet {
 				  */
 		if(service.validateUser(name, pwd))
  
-			out.write("Login successfull DONE...");
- 
-			out.write("Login successfull...done");
+	out.write("Login successfull DONE...");
+	 
  
 		else
 			out.write("Login Error...appeared");
